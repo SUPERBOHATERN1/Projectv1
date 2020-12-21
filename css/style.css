@@ -1,0 +1,313 @@
+/* variables*/
+	:root {
+  --btn-color : rgba(247,229,69);
+  --black-color: rgb(0,0,0);
+  --yellow-color: #ffef00;
+}
+/*global style*/
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: BlenderProBook,sans-serif;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--black-color);
+	height: 100vh;
+}
+h1{
+	font-size: 72px;
+	font-weight: 100;
+	text-align: center;
+	letter-spacing: 0.05em;
+}
+h2{
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	font-size: 36px;
+	text-align: center;
+	letter-spacing: 0.05em;
+}
+section{
+	overflow: hidden;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+}
+button{
+	border:none;
+	outline: none;
+}
+nav ul{
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+	list-style-type: none;
+	padding: 20px;
+}
+nav ul li{
+	color:var(--yellow-color);
+	padding: 0 20px;
+}
+header{
+	display: grid;
+	grid-template-columns: 50%;
+}
+
+.welcome_box{
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	grid-template-columns: 1fr 1fr;
+}
+.welcome_box_text{
+	position: relative;
+	padding: 15px;
+	margin: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: url("../img/first_bg.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+  	box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
+    border-bottom:2px solid yellow;
+    border-right:2px solid yellow;
+    border-left: 5px double yellow;
+    border-top: 3px double yellow;
+}
+.welcome_box_text:before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  border-bottom:44px solid yellow;
+  border-left:44px solid transparent;
+  width: 0;
+}
+.welcome_box_text__border{
+
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top:5px;
+	left: 5px;
+  	box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
+    border: 1px solid yellow;
+}
+.preson{
+	overflow: hidden;
+}
+.person_img{
+	width: 75%;
+	animation: img_glitch 7s linear infinite alternate
+}
+.section_title{
+	color:var(--yellow-color);
+	font-weight: bold;
+    font-size: 4vw;
+	margin-bottom: 5%;
+}
+.btn{
+	position: relative;
+	padding: 20px 30px;
+	font-size: 2vw;
+	background-color: var(--yellow-color);
+	font-family: BlenderProBold,sans-serif;
+}
+.btn:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 15px solid black;
+  border-right:  15px solid transparent;
+  width: 0;
+}
+.welcome_box_info{
+	color:white;
+	margin: 25px 5px 55px 5px;
+}
+
+.line_bettwen{
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-image: url(https://www.cyberpunk.net/build/images/home/razor-bottom-black-12f7b143.svg);
+    background-position: top;
+
+}
+.about{
+	background-color: var(--yellow-color);
+	position: relative;
+}
+.about main{
+	background-color: var(--yellow-color);
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+    z-index: 99999;
+}
+.about_heading{
+		grid-column: 1 / -1;
+}
+.about_heading h1{
+	font-size: 70px;
+    font-family: BlenderProBold,sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.about_img{
+	grid-column: 1 / span 3;
+
+}
+.about_img img{
+	width: 60%;
+/*	box-shadow:inset 0px 0px 0px 10px red;
+	-webkit-box-shadow:inset 0px 0px 0px 10px #f00;
+    -moz-box-shadow:inset 0px 0px 0px 10px #f00;*/
+}
+.about_text{
+		grid-column: 4 / 9;
+}
+.about_text p{
+		text-align: justify;
+		padding: 0 20px;
+}
+
+
+
+.skills_heading, .projects_heading {
+	color:var(--yellow-color);
+}
+
+.skills_list{
+	color:white;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer{
+	background-color: var(--yellow-color);
+	text-align: center;
+}
+.contact{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.socialmedia{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+
+@media (max-width: 1110px) {
+	.welcome_box{
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr:
+	}
+}
+li{
+	cursor: pointer;
+}
+li:hover{
+	animation: li_glitch 0.9s linear infinite alternate
+}
+@keyframes li_glitch {
+	0% {
+		text-decoration-line: line-through;
+		text-decoration-color: aqua;
+
+	 }
+	15% {
+		text-decoration-line: overline;
+		text-decoration-color: #4e865c;
+		text-transform: uppercase;
+
+	}
+	25% {
+		text-decoration-line: line-through;
+		text-decoration-color: red;
+	}
+	45% {
+		text-decoration-line: underline;
+		text-decoration-color: #4e865c
+		text-decoration-style: double;
+	}
+	77% {
+		text-decoration-line: line-through;
+		text-decoration-color: white;
+			-webkit-text-stroke: thick;
+	}
+	91% {
+		text-decoration-line: underline;
+		text-decoration-color: #861773;
+		-webkit-text-security: square;
+	}
+	92% {
+		text-decoration-line: underline;
+		text-decoration-color: #861773;
+		color:transparent;
+	}
+	95% {
+		text-decoration-color: #ff6a00
+	}
+	99% {
+		text-decoration-color: blue;
+		white-space: pre-wrap;
+		transform: rotateX(45deg);
+	}
+}
+
+@keyframes img_glitch {
+	44% {
+		filter: brightness(0.5);
+		filter: grayscale(1);
+		filter: hue-rotate(45deg);
+		filter: sepia(1);
+	 }
+	45% {
+	 	filter: none;
+	 }
+	 47% {
+		filter: sepia(1);
+	 }
+	 51% {
+
+		filter: hue-rotate(45deg);
+		filter: sepia(1);
+	 }
+	 52% {
+		filter: brightness(0.5);
+		filter: grayscale(1);
+	 }
+	 66% {
+
+		filter: grayscale(1);
+		filter: sepia(1);
+	 }
+	 71% {
+
+		filter: hue-rotate(45deg);
+		filter: sepia(1);
+	 }
+	77%{
+		filter: brightness(0.5);
+		filter: grayscale(1);
+
+	 }
+	 100% {
+		filter: brightness(0.5);
+		filter: hue-rotate(45deg);
+	
+
+}
