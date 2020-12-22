@@ -3,6 +3,7 @@
   --btn-color : rgba(247,229,69);
   --black-color: rgb(0,0,0);
   --yellow-color: #ffef00;
+  --red-color:#fd0130;
 }
 /*global style*/
 *{
@@ -44,6 +45,7 @@ section{
 button{
 	border:none;
 	outline: none;
+	cursor: pointer;
 }
 nav ul{
 	display: grid;
@@ -93,6 +95,10 @@ header{
   border-left:44px solid transparent;
   width: 0;
 }
+.welcome_box_text button:hover{
+	background-color: var(--red-color);
+	transition: all .3s;
+}
 .welcome_box_text__border{
 
 	position: absolute;
@@ -130,6 +136,15 @@ header{
   left: 0;
   border-bottom: 15px solid black;
   border-right:  15px solid transparent;
+  width: 0;
+}
+.btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 15px solid black;
+  border-left:  15px solid transparent;
   width: 0;
 }
 .welcome_box_info{
@@ -183,8 +198,17 @@ header{
 		text-align: justify;
 		padding: 0 20px;
 }
+.box_info__button{
+	display: flex;
+	align-items: center;
+}
+.box_info__button svg{
+	margin-left: 5px;
 
-
+}
+.projects_heading{
+	padding: 10px;
+}
 
 .skills_heading, .projects_heading {
 	color:var(--yellow-color);
@@ -192,21 +216,138 @@ header{
 
 .skills_list{
 	color:white;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	margin:5%;
 }
-
+.skills_list ul{
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 5px;
+}
+.technology_item{
+	display: grid;
+	justify-content: center;
+}
+.technology_item svg{
+	padding-bottom: 10px;
+	width: 4em;
+	height: 4em;
+}
+.project_list{
+	grid-gap: 1%;
+		display: grid;
+	grid-template-columns: repeat(3, 1fr)
+}
+.project_item{
+	border:1px solid var(--yellow-color);
+	position: relative;
+}
+.project_item:hover > .project_item_img img{
+	transition: all .2s;
+	opacity: .4;
+}
+.project_item_img{
+	position: relative;
+}
+.project_item_img img{
+	width: 100%;
+}
+.project_item_img img:nth-child(2){
+	width: 48px;
+}
+.item_img{
+	width: 48px;
+}
+.project_item_box1{
+	position: absolute;
+	width: 20px;
+	height: 30%;
+	background-color: var(--yellow-color);
+	top:0;
+	left: 0;
+	z-index:9999;
+	border-bottom-right-radius: 1px;
+}
+.project_item_box2{
+	position: absolute;
+	width: 10px;
+	height: 40px;
+	background-color: var(--yellow-color);
+	bottom:0;
+	right: 0;
+	z-index:9999;
+	border-bottom-right-radius: 1px;
+}
+.project_item_box3{
+	position: absolute;
+	width: 20%;
+	height: 25px;
+	background-color: var(--yellow-color);
+	top:0;
+	right: 0;
+	z-index:9999;
+	border-bottom-right-radius: 1px;
+}
 footer{
 	background-color: var(--yellow-color);
 	text-align: center;
 }
 .contact{
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	padding: 1%;
 }
 .socialmedia{
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+	align-items: center;
+	justify-items: center;
+}
+.l-about__feature-zoom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: calc(50% - 24px);
+    opacity: 0;
+    width: 48px;
+}
+
+.l-about__feature-img, .l-about__feature-zoom {
+    -webkit-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+/* ICONS */
+.l-footer__social-item {
+    list-style: none;
+    margin: 0;
+        margin-right: 0px;
+    padding: 0;
+    display: -webkit-box;
+    display: flex;
+}
+.l-footer__social-item .icon-instagram {
+    background-image: url(../img/icons/icon-social-instargam-e5672d1b.svg);
+}
+.l-footer__social-item .icon-youtube {
+    background-image: url(../img/icons/icon-youtube-fe03dcbc.svg);
+}
+.l-footer__social-item .icon-facebook {
+    background-image: url(../img/icons/icon-facebook-bd939719.svg);
+}
+.l-footer__social-item .icon-twitch {
+    background-image: url(../img/icons/icon-social-twitch-cd4ac500.svg);
+}
+.l-footer__social-item .icon-twitter {
+    background-image: url(../img/icons/icon-twitter-defe5f7b.svg);
+}
+.l-footer__social-item .icon {
+    display: inline-block;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 25px;
+    height: 25px;
 }
 
 
@@ -219,7 +360,7 @@ footer{
 li{
 	cursor: pointer;
 }
-li:hover{
+.top_naivgation li:hover{
 	animation: li_glitch 0.9s linear infinite alternate
 }
 @keyframes li_glitch {
