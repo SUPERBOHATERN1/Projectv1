@@ -33,6 +33,7 @@ h2{
 	font-size: 36px;
 	text-align: center;
 	letter-spacing: 0.05em;
+	margin: 10px;
 }
 section{
 	overflow: hidden;
@@ -351,18 +352,35 @@ footer{
 }
 
 
-@media (max-width: 1110px) {
-	.welcome_box{
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr:
-	}
-}
+
 li{
 	cursor: pointer;
 }
 .top_naivgation li:hover{
 	animation: li_glitch 0.9s linear infinite alternate
 }
+
+
+/*RWD*/
+
+@media (max-width: 1110px) {
+	header {
+		grid-template-columns: 1fr;
+	}
+	.welcome_box{
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr:
+	}
+	.about_img, .about_text {
+		grid-column:1 / -1 ;
+	}
+	.project_list{
+		grid-template-columns: 1fr;
+	}
+}
+
+/*Animations*/
+
 @keyframes li_glitch {
 	0% {
 		text-decoration-line: line-through;
